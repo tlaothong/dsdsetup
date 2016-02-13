@@ -1,87 +1,75 @@
 ﻿@model IEnumerable<TheS.eExam.DSDAdminRequest.DSA.EF.AdminRequest>
 
-  
+
 
 @{
     ViewBag.Title = "ยื่นคำขอเริ่มเปิดระบบ";
 }
 
-<h2>ยื่นคำขอเริ่มเปิดระบบ</h2>
+<h2>รายการยื่นคำขอเริ่มเปิดระบบ</h2>
 
-<p>
-    <a class="btn btn-primary" href="/AdminRequests/Create"><span class="glyphicon glyphicon-plus"></span> Create New</a>
-</p>
+@*<p>
+        <a class="btn btn-primary" href="/AdminRequests/Create"><span class="glyphicon glyphicon-plus"></span> Create New</a>
+    </p>*@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ContactEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TitleName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.FirstName) - @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PID)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ContactEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProvinceId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IsApproved)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Branch.Code)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Province.Code)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TitleName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsApproved)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Branch.Code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Province.Code)
-        </td>
-        <td>
-
-            <a href="@Url.Action("Edit","AdminRequests",new { id=item.Id })" >
-                <div class="icon-edit" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-pencil" ></span></div>
-            </a>
-            <a href="@Url.Action("Details","AdminRequests",new { id=item.Id })">
-                <div class="icon-edit"  data-toggle="tooltip" title="Details"><span class="glyphicon glyphicon-info-sign"></span></div>
-            </a>
-            <a href="@Url.Action("Delete","AdminRequests",new { id=item.Id })">
-                <div class="icon-edit" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-trash"></span></div>
-            </a>
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleName)@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Province.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsApproved)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit","AdminRequests",new { id=item.Id })">
+                    <div class="icon-edit" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-pencil"></span></div>
+                </a>
+                <a href="@Url.Action("Details","AdminRequests",new { id=item.Id })">
+                    <div class="icon-edit" data-toggle="tooltip" title="Details"><span class="glyphicon glyphicon-info-sign"></span></div>
+                </a>
+                <a href="@Url.Action("Delete","AdminRequests",new { id=item.Id })">
+                    <div class="icon-edit" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-trash"></span></div>
+                </a>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+            </td>
+        </tr>
+    }
 
 </table>

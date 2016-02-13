@@ -78,6 +78,7 @@
     <Compile Include="EF\Province.cs">
       <DependentUpon>DSDAdminRequest.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\AdminRequest.partial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
