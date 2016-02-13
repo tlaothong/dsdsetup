@@ -1,13 +1,15 @@
 ﻿@model IEnumerable<TheS.eExam.DSDAdminRequest.DSA.EF.AdminRequest>
 
+  
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ยื่นคำขอเริ่มเปิดระบบ";
 }
 
-<h2>Index</h2>
+<h2>ยื่นคำขอเริ่มเปิดระบบ</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a class="btn btn-primary" href="/AdminRequests/Create"><span class="glyphicon glyphicon-plus"></span> Create New</a>
 </p>
 <table class="table">
     <tr>
@@ -65,9 +67,19 @@
             @Html.DisplayFor(modelItem => item.Province.Code)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+
+            <a href="@Url.Action("Edit","AdminRequests",new { id=item.Id })" >
+                <div class="icon-edit" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-pencil" ></span></div>
+            </a>
+            <a href="@Url.Action("Details","AdminRequests",new { id=item.Id })">
+                <div class="icon-edit"  data-toggle="tooltip" title="Details"><span class="glyphicon glyphicon-info-sign"></span></div>
+            </a>
+            <a href="@Url.Action("Delete","AdminRequests",new { id=item.Id })">
+                <div class="icon-edit" data-toggle="tooltip" title="Delete"><span class="glyphicon glyphicon-trash"></span></div>
+            </a>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
         </td>
     </tr>
 }

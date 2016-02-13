@@ -1,6 +1,7 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html,body {
+    margin:0;
+    padding:0;
+    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,74 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* =================================================== my setting =================================================== */
+
+#wrapper{
+    min-height:100%;
+    position:relative;
+    padding-bottom:50px;
+    background:linear-gradient(#FFF 50%,#DDD );
+}
+
+footer{
+    bottom:0;
+    position:absolute;
+    width:100%;
+    height:50px;
+    text-align:center;
+    color:#FFF;
+    background-color:#000;
+    padding:10px;
+}
+
+.block-center {
+    display:block;
+    float:none;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.navbar-inverse {
+    background:linear-gradient(#956BB5,#552B75);
+    border:none;
+}
+
+.navbar-inverse a {
+        color:#FFF !important;
+        font-size:15px;
+}
+
+.body-content {
+    padding-top:75px;
+}
+
+.navbar-nav >li > a{
+    padding-bottom:20px;
+    padding-top:20px;
+}
+
+a.link-logo img,a.link-logo,a.link-logo:hover{
+    padding-bottom:5px !important;
+    padding-top:5px !important;
+    margin-right:10px;
+    text-decoration:none;
+}
+
+.btn-menu {
+    background:linear-gradient(#956BB5,#552B75);
+    border:none !important;
+}
+
+.btn-menu:hover {
+    background:linear-gradient(#854BA5,#451B65);
+    border:none;
+}
+
+.icon-edit {
+    margin-left:7px;
+    margin-right:7px;
+    float:left;
+    font-size:20px;
 }

@@ -9,9 +9,12 @@
 
 </head>
 <body>
+    <div id="wrapper">
     <div class="navbar navbar-inverse navbar-fixed-top">
+
         <div class="container">
             <div class="navbar-header">
+                <a href="/" class="link-logo"><img src="~/Images/Logo_dsd_mini.png" height="80px" /> @*กรมพัฒนาฝีมือแรงงาน*@</a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -21,8 +24,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("ยื่นคำขอเริ่มเปิดระบบ", "Create", "AdminRequests")</li>
+                    @*<li class="link_noimg"><a href="/" class="btn btn-menu"><span class="glyphicon glyphicon-home"></span> Home</a></li>*@
+                    <li><a href="/AdminRequests/Create" class="btn btn-menu"><span><img src="~/Images/file_a_petition.png" height="40px"/></span> ยื่นคำขอเริ่มเปิดระบบ</a></li>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
@@ -31,13 +34,20 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+      
+    </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
-    </div>
-
+        </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+    </script>
+        
 </body>
 </html>
