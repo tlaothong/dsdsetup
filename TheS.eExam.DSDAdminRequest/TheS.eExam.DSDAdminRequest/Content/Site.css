@@ -62,7 +62,7 @@ footer{
 }
 
 .body-content {
-    padding-top:75px;
+    padding-top:90px;
 }
 
 .navbar-nav >li > a{
@@ -93,3 +93,35 @@ a.link-logo img,a.link-logo,a.link-logo:hover{
     float:left;
     font-size:20px;
 }
+
+.full-width {
+    margin-left:0;
+    margin-right0;
+    width:100%;
+}
+
+#email-list-detail > div > input {
+    max-width:100% !important;
+}
+
+
+
+#email-list-detail > .col-md-12 {
+    margin-bottom:5px;
+}
+
+.bottom-box {
+    border-top:1px solid transparent;
+    text-align:center !important;
+    height:auto;
+    padding:0;
+    padding-bottom:5px;
+}
+
+@media screen and (min-width: 992px){ 
+      #email-list-detail
+{
+    height:240px !important;
+  }
+  }
+

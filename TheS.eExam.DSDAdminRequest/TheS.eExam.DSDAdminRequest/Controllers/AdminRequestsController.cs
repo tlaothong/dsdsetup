@@ -113,6 +113,33 @@ namespace TheS.eExam.DSDAdminRequest.Controllers
             return View(adminRequest);
         }
 
+        // GET: AdminRequests/Create2
+        public ActionResult Create2()
+        {
+            ViewBag.BranchId = new SelectList(db.Branches, "Code", "Name");
+            ViewBag.ProvinceId = new SelectList(db.Provinces, "Code", "Name");
+            return View();
+        }
+
+        // POST: AdminRequests/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "Id,ContactEmail,TitleName,FirstName,LastName,PID,IsApproved,BranchId,ProvinceId")] AdminRequest adminRequest)
+        {
+            if (ModelState.IsValid)
+            {
+                db.AdminRequests.Add(adminRequest);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.BranchId = new SelectList(db.Branches, "Id", "Code", adminRequest.BranchId);
+            ViewBag.ProvinceId = new SelectList(db.Provinces, "Id", "Code", adminRequest.ProvinceId);
+            return View(adminRequest);
+        }
+
         // POST: AdminRequests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

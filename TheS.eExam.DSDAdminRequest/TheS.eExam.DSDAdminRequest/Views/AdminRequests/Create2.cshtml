@@ -1,0 +1,136 @@
+﻿@model TheS.eExam.DSDAdminRequest.DSA.EF.AdminRequest
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="form-horizontal col-md-12 block-center">
+            <h2>ยื่นคำขอเริ่มเปิดระบบ</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @*============================================ Tab 3 ============================================*@
+                    <div class="row">
+                        
+                        <div class="ol-md-offset-1 col-md-6 col-sm-6">
+                            <div class="form-group">
+                              
+                                @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TitleName, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.TitleName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TitleName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PID, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.PID, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @*<div class="form-group">
+                                    @Html.LabelFor(model => model.IsApproved, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.IsApproved)
+                                            @Html.ValidationMessageFor(model => model.IsApproved, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.BranchId, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.DropDownList("BranchId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ProvinceId, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.DropDownList("ProvinceId", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ProvinceId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+   
+                        </div>
+                        <div id="email-list" class="col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">@Html.LabelFor(model => model.ClientAccounts)</h3>
+                                    </div>
+                                    <div class="panel-body" id="email-list-detail" style="overflow-y:scroll; height:450px">
+                                        <div class="col-md-12">
+                                            <p>Example_test@hotmail.com</p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p>Example_test2@hotmail.com</p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p>Example_test3@hotmail.com</p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="email" placeholder="กรอกอีเมล์เครื่องสอบ" class="form-control" />
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-12 panel-heading bottom-box" @*style="border:1px solid #dddddd;background-color:#f5f5f5;border-bottom-left-radius:3px;border-bottom-right-radius:3px"*@>
+                                        <input type="submit" value="เพิ่มอีเมลล์" class="btn btn-default" style="margin-top:5px"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        
+                    </div>
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
+                    <input type="submit" value="ยื่นคำร้อง" class="btn btn-primary" />
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+}
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

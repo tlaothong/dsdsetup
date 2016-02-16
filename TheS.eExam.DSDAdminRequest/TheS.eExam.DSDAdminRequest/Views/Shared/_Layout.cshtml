@@ -25,7 +25,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li class="link_noimg"><a href="/" class="btn btn-menu"><span class="glyphicon glyphicon-home"></span> Home</a></li>*@
-                    <li><a href="/AdminRequests/Create" class="btn btn-menu"><span><img src="~/Images/file_a_petition.png" height="40px"/></span> ยื่นคำขอเริ่มเปิดระบบ</a></li>
+                    <li><a href="@Url.Action("Create", "AdminRequests")" class="btn btn-menu"><span><img src="~/Images/file_a_petition.png" height="40px"/></span> ยื่นคำขอเริ่มเปิดระบบ</a></li>
+                    
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
